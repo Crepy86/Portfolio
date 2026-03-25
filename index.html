@@ -1,9 +1,74 @@
-<doctype html>
-    <head>
-    <title> Portfolio</title>
-    </head>
-    <body>
-        <h1>Bienvenido a mi portfolio</h1>  
-        <p>Aqui encontrará información profesional acerca de mí, muevase por el mismo a traves de los botones en la parte superior</p> 
-    </body>
-</doctype>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!--css-->
+    <link rel="stylesheet" href="estilos/estilo1.css">
+
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--barra de navegación-->
+    <nav>
+        <a class="boton" href="index.html">Inicio</a>
+        <a class="boton" href="sobre-mi.html">Sobre mí</a>
+        <a class="boton" href="experiencia.html">Experiencia</a>
+        <a class="boton" href="contacto.html">Contacto</a>
+        <button class="modoscbt" onclick="toggleDarkMode()" id="modoBtn">🌙</button>
+    </nav>
+
+    <!--contenedores de columnas-->
+    <div class="contenedor">
+
+        <!--columna texto-->
+        <div class="texto">
+            <h1>Bienvenido a mi portfolio</h1>  
+
+            <p class="desc">
+                Aquí encontrarás información profesional sobre mi trayectoria como desarrollador. Podés navegar por el sitio utilizando los botones superiores.
+            </p> 
+        </div>
+
+        <!--columna imagen-->
+        <div class="imagen">
+            <img class="perfil-img" src="imagenes/mi-foto.jpg" alt="Mi foto de perfil">
+        </div>
+
+    </div>
+
+    <!--script-->
+  <script>
+function toggleDarkMode() {
+  document.body.classList.toggle("modosc")
+  const btn = document.getElementById("modoBtn")
+
+  if (document.body.classList.contains("modosc")) {
+    localStorage.setItem("modo", "oscuro")
+    if (btn) btn.textContent = "☀️"
+  } else {
+    localStorage.setItem("modo", "claro")
+    if (btn) btn.textContent = "🌙"
+  }
+}
+
+/* Mantener modo al cargar */
+window.addEventListener("DOMContentLoaded", function() {
+  const modoGuardado = localStorage.getItem("modo")
+  const btn = document.getElementById("modoBtn")
+
+  if (modoGuardado === "oscuro") {
+    document.body.classList.add("modosc")
+    if (btn) btn.textContent = "☀️"
+  }
+})
+</script>
+
+</body>
+</html>

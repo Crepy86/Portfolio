@@ -1,29 +1,83 @@
-<doctype html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiencia</title>
 
-    <body>
+    <link rel="stylesheet" href="estilos/estilo1.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav>
+    <a class="boton" href="index.html">Inicio</a>
+    <a class="boton" href="sobre-mi.html">Sobre mí</a>
+    <a class="boton" href="experiencia.html">Experiencia</a>
+    <a class="boton" href="contacto.html">Contacto</a>
+
+    <button class="modoscbt" onclick="toggleDarkMode()" id="modoBtn">🌙</button>
+</nav>
+
+<div class="contenedor">
+    <div class="texto">
         <h1>Experiencia laboral</h1>
-        <h2>
-        <h2>Desarrollo de página web personal</h2>
-    <ul>
-        <li>Diseño y desarrollo de un sitio web utilizando HTML, CSS y JavaScript.</li>
-        <li>Implementación de diseño responsive para distintos dispositivos.</li>
-        <li>Publicación del sitio en entorno online.</li>
-    </ul>
+        <h2>Web personal</h2>
+        <ul>
+            <li>Desarrollo con HTML, CSS y JS</li>
+            <li>Diseño responsive</li>
+            <li>Publicación online</li>
+        </ul>
+    </div>
 
-    <h2>Sistema de gestión de productos (proyecto personal)</h2>
-    <ul>
-        <li>Desarrollo de una aplicación para administrar productos y stock.</li>
-        <li>Implementación de operaciones CRUD con base de datos.</li>
-        <li>Uso de tecnologías como JavaScript y SQLite.</li>
-    </ul>
+    <div class="texto">
+        <h2>Sistema de gestión</h2>
+        <ul>
+            <li>CRUD con base de datos</li>
+            <li>JavaScript y SQLite</li>
+            <li>Gestión de stock</li>
+        </ul>
+    </div>
 
-    <h2>Proyecto grupal de desarrollo web</h2>
-    <ul>
-        <li>Participación en equipo para el desarrollo de una aplicación web.</li>
-        <li>Uso de Git y GitHub para control de versiones.</li>
-        <li>Colaboración en la resolución de problemas y organización de tareas.</li>
-    </ul>
+    <div class="texto">
+        <h2>Proyecto grupal</h2>
+        <ul>
+            <li>Trabajo en equipo</li>
+            <li>Uso de Git y GitHub</li>
+            <li>Organización de tareas</li>
+        </ul>
+    </div>
 
-        </h2>
-    </body>
-</doctype>
+</div>
+
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle("modosc")
+  const btn = document.getElementById("modoBtn")
+
+  if (document.body.classList.contains("modosc")) {
+    localStorage.setItem("modo", "oscuro")
+    if (btn) btn.textContent = "☀️"
+  } else {
+    localStorage.setItem("modo", "claro")
+    if (btn) btn.textContent = "🌙"
+  }
+}
+
+/* Mantener modo al cargar */
+window.addEventListener("DOMContentLoaded", function() {
+  const modoGuardado = localStorage.getItem("modo")
+  const btn = document.getElementById("modoBtn")
+
+  if (modoGuardado === "oscuro") {
+    document.body.classList.add("modosc")
+    if (btn) btn.textContent = "☀️"
+  }
+})
+</script>
+
+</body>
+</html>

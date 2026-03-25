@@ -1,0 +1,108 @@
+/*modo claro*/
+:root {
+  --colorF: #d9e4c1;/*Color del Fondo*/
+  --colorTx: #1b3a2f;/*Color del Texto*/
+  --colorTi: #0b2e13;/*Color del Titulo*/
+  --colorBTx: #f6faee;/*Color de Texto del Botón*/
+  --colorBF: linear-gradient(135deg, #031f08 , #2E8B57);/*Color de Fondo del Botón*/
+}
+
+/*modo oscuro*/
+.modosc {
+  --colorF: #0f1a13;/*Color del Fondo*/
+  --colorTx: #d8f3dc;/*Color del Texto*/
+  --colorTi: #95d5b2;/*Color del Titulo*/
+  --colorBTx: #ffffff;/*Color del Texto del Botón*/
+  --colorBF: linear-gradient(135deg, #1b4332, #2d6a4f);/*Color del Fondo del Botón*/
+}
+
+/*body*/
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--colorF);
+  color: var(--colorTx);
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+/*Barra de navegación*/
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+/*botones navegación*/
+.boton {
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 16px;
+  color: var(--colorBTx);
+  background: var(--colorBF);
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+/*botón modo oscuro*/
+.modoscbt {
+  padding: 10px 16px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #031f08;
+  color: white;
+
+}
+
+/*títulos*/
+h1, h2, h3 {
+  font-family: 'Oswald', sans-serif;
+  color: var(--colorTi);
+  margin: 20px;
+}
+
+/*párrafos*/
+p {
+  margin: 20px;
+  font-size: 18px;
+}
+
+/*descripción*/
+.desc {
+  font-size: 22px;
+}
+
+/*imagen del perfil*/
+.perfil-img {
+  width: 250px;
+  max-width: 80%;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 20px auto;
+}
+
+
+/*columnas*/
+.contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap; /* hace que sea responsive */
+  padding: 20px;
+}
+
+/* columna texto */
+.texto {
+  max-width: 500px;
+}
+
+/* columna imagen */
+.imagen {
+  max-width: 300px;
+}
