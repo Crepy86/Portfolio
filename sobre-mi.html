@@ -48,29 +48,7 @@
 </div>
 
 <script>
-function toggleDarkMode() {
-  document.body.classList.toggle("modosc")
-  const btn = document.getElementById("modoBtn")
 
-  if (document.body.classList.contains("modosc")) {
-    localStorage.setItem("modo", "oscuro")
-    if (btn) btn.textContent = "☀️"
-  } else {
-    localStorage.setItem("modo", "claro")
-    if (btn) btn.textContent = "🌙"
-  }
-}
-
-/* Mantener modo al cargar */
-window.addEventListener("DOMContentLoaded", function() {
-  const modoGuardado = localStorage.getItem("modo")
-  const btn = document.getElementById("modoBtn")
-
-  if (modoGuardado === "oscuro") {
-    document.body.classList.add("modosc")
-    if (btn) btn.textContent = "☀️"
-  }
-})
 </script>
 
 </body>
